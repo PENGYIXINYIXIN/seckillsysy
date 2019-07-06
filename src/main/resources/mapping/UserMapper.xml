@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qfedu.seckillsysy.dao.UserDao">
+    <resultMap id="userMap" type="com.qfedu.seckillsysy.pojo.User">
+        <id property="uid" column="uid"></id>
+        <result property="mobile" column="mobile"></result>
+        <result property="password" column="password"></result>
+        <result property="location" column="location"></result>
+    </resultMap>
+    
+    <select id="findUserByMobile" parameterType="string" resultMap="userMap">
+      SELECT  *  from t_user where mobile = #{mobile}
+    </select>
+</mapper>
